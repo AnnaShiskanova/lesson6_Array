@@ -28,7 +28,16 @@ int[] GenerateArray(int Lenght)
        array[array.Length - 1 - i] = tmp;
     }
     return array;
- }   
+ }  
+
+ int[] AnotherReverseArray(int[] array)
+{
+int[] tmpArray = new int[array.Length];
+for (int i = 0; i < array.Length; i++)
+tmpArray[i] = array[array.Length - 1 - i];
+return tmpArray;
+} 
+ 
 
  void PrintArray(int[]array)
  {
@@ -38,4 +47,5 @@ int[] GenerateArray(int Lenght)
     int[] array = GenerateArray(10);
     PrintArray(array);
     PrintArray(ReverseArray(array));
+    PrintArray(AnotherReverseArray(array));
 }
