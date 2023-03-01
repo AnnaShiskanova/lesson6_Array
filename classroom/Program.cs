@@ -14,7 +14,7 @@ switch(NumberOfTask)
 
     case 2:
     Console.Clear();
-    //Task40();
+    Task40();
     break;
 
     case 3:
@@ -94,25 +94,27 @@ return tmpArray;
     PrintArray(AnotherReverseArray(array));
 }
 
-// static void Task40()
-// {
-//     //     Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, 
-//     // может ли существовать треугольник с сторонами такой длины.
-//     // Теорема о неравенстве треугольника: 
-//     // каждая сторона треугольника меньше суммы двух других сторон.
+static void Task40()
+{
+    //     Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, 
+    // может ли существовать треугольник с сторонами такой длины.
+    // Теорема о неравенстве треугольника: 
+    // каждая сторона треугольника меньше суммы двух других сторон.
+    Console.WriteLine("Input number a: ");
+    int a = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input number b: ");
+    int b = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input number c: ");
+    int c = Convert.ToInt32(Console.ReadLine());
+    
+    if (a + b > c && a + c > b && b +c >a)
+    Console.WriteLine("the triangle exists");
+    else   
+    Console.WriteLine("the triangle does not exist");
 
-//     int a;
-//     int b;
-//     int c;
-//     int Sum1 = a + b;
-//     int Sum2 = b + c;
-//     int Sum3 = a + c;
-//     if (Sum1<Sum2 && Sum1<Sum3 && Sum2<Sum3)
-//     true;
 
 
-
-// }
+}
 
 static void Task42()
 {
