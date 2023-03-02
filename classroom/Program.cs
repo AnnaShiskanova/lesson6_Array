@@ -1,8 +1,8 @@
 ﻿Console.Clear();
 Console.WriteLine("1 - Task 39");
 Console.WriteLine("2 - Task 40");
-Console.WriteLine("3 - Task 42");
-Console.WriteLine("4 - Task 35");
+Console.WriteLine("3 - Task 42_var1");
+Console.WriteLine("4 - Task 42_var2");
 Console.WriteLine("5 - Task 37");
 int NumberOfTask = Prompt("Введите номер задачи");
 switch(NumberOfTask)
@@ -19,13 +19,13 @@ switch(NumberOfTask)
 
     case 3:
     Console.Clear();
-    Task42();
+    Task42_var1();
     break;
 
-    // case 4:
-    // Console.Clear();
-    // Task35();
-    // break;
+    case 4:
+    Console.Clear();
+    Task42_var2();
+    break;
 
     // case 5:
     // Console.Clear();
@@ -116,7 +116,7 @@ static void Task40()
 
 }
 
-static void Task42()
+static void Task42_var1()
 {
     // Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 // 45 -> 101101
@@ -135,3 +135,38 @@ static void Task42()
     System.Console.WriteLine(numbs);
 
 }
+
+static void Task42_var2()
+{
+    Console.WriteLine("Input number: ");
+    int numb = Convert.ToInt32(Console.ReadLine());
+    int count = 0;
+    int tmpNumb = numb;
+
+    while (tmpNumb > 0)
+    {
+        tmpNumb = tmpNumb / 2;
+        count++;
+    }
+
+    string[] numbs = new string[count];
+    for (int i = 0; i < count; i++, numb = numb / 2)
+    {
+        numbs[i] += numb % 2; 
+    }
+
+    string[] RevertArray(string[] array)
+    {
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            string tmp = array[i];
+            array[i] = array[array.Length - 1 - i];
+            array[array.Length - 1 - i] = tmp;
+        }
+
+        return array;
+    }
+    string[] trueNumb = RevertArray(numbs);
+    Console.WriteLine(String.Join("", trueNumb));
+}
+
