@@ -3,7 +3,8 @@ Console.WriteLine("1 - Task 39");
 Console.WriteLine("2 - Task 40");
 Console.WriteLine("3 - Task 42_var1");
 Console.WriteLine("4 - Task 42_var2");
-Console.WriteLine("5 - Task 37");
+Console.WriteLine("5 - Task 44");
+Console.WriteLine("6 - Task 45");
 int NumberOfTask = Prompt("Введите номер задачи");
 switch(NumberOfTask)
 {
@@ -27,11 +28,15 @@ switch(NumberOfTask)
     Task42_var2();
     break;
 
-    // case 5:
-    // Console.Clear();
-    // Task37();
-    // break;
+    case 5:
+    Console.Clear();
+    Task44();
+    break;
 
+    case 6:
+    Console.Clear();
+    Task45();
+    break;
     default:
     Console.WriteLine("Номер задачи введен неверно");
     break;
@@ -170,3 +175,96 @@ static void Task42_var2()
     Console.WriteLine(String.Join("", trueNumb));
 }
 
+
+static void Task44()
+{
+    // Задача 44: Не используя рекурсию, выведите первые N чисел Фибоначчи. 
+    //Первые два числа Фибоначчи: 0 и 1.
+// Если N = 5 -> 0 1 1 2 3
+// Если N = 3 -> 0 1 1
+// Если N = 7 -> 0 1 1 2 3 5 8
+
+    Console.Write("Enter the number of Fibonacci numbers: ");
+    int n = int.Parse(Console.ReadLine());
+
+    int a = 0;
+    int b = 1;
+    int c;
+
+    Console.Write(a + " " + b + " ");
+
+    for (int i = 2; i < n; i++)
+    {
+    c = a + b;
+    a = b;
+    b = c;
+
+    Console.Write(c + " ");
+    }
+
+    Console.WriteLine();
+     
+}
+
+static void Task45()
+{
+    // Задача 45: Напишите программу, которая будет создавать копию заданного массива 
+    //с помощью поэлементного копирования.
+
+    int[] array = GenerateArray(10);
+
+    int[] GenerateArray(int Lenght)
+    {
+    int[] array = new int[Lenght];
+    for (int i = 0; i < Lenght; i++)
+    {
+        array[i] = new Random().Next(-10,11);//берем любой интервал, потому что иное не сказанов задании
+        
+    }
+    return array;
+    }   
+
+    int[] CopyArray (int[] array )
+    {
+        int[] arrayCopy = new int [array.Length];
+        for (int i = 0; i < array.Length; i++)
+        {
+            arrayCopy[i] = array[i];
+        }
+        return arrayCopy;
+    }
+
+    void PrintArray(int[]array)
+ {
+    Console.WriteLine(String.Join(" ", array));
+ }
+
+ PrintArray(array);
+ PrintArray(CopyArray(array));
+ Console.WriteLine(array == array);
+ Console.WriteLine(array == CopyArray(array));
+ 
+
+// int[] copyArray = new int[array.Length];
+
+// for (int i = 0; i < array.Length; i++)
+// {
+// copyArray[i] = array[i];
+// }
+
+// Console.WriteLine("Original array:");
+// foreach (int num in array)
+// {
+// Console.Write(num + " ");
+// }
+
+// Console.WriteLine("\nCopied array:");
+// foreach (int num in copyArray)
+// {
+// Console.Write(num + " ");
+// }
+
+// Console.WriteLine();
+
+
+}
